@@ -52,6 +52,7 @@ const pages = [
 export const LandingPage = () => {
   const transRef = useSpringRef();
   const [index, set] = useState(0);
+  // eslint-disable-next-line no-unused-vars
   const [transitions, api] = useTransition(index, () => ({
     ref: transRef,
     keys: null,
