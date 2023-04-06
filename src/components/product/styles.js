@@ -114,6 +114,55 @@ export const StyledCard = styled.div`
       }
     }
   }
+
+  @media (min-width: 313px) {
+    .card {
+      &__content {
+        .description {
+          .title {
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 336px) {
+    .card {
+      &__content {
+        .description {
+          .title {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 383px) {
+    .card {
+      &__content {
+        .description {
+          .tags {
+            font-size: 12px;
+          }
+          .title {
+            font-size: 14px;
+          }
+          .number {
+            &__grouped {
+              .ratings {
+                font-size: 12px;
+              }
+            }
+            .price {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
 `;
 
 export const StyledProductDetails = styled.div`
