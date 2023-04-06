@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useRef } from "react";
+import { animated, useTransition } from "react-spring";
+import styled from "styled-components";
+import { BottomNav } from "components/bottom-nav";
+import { TopNav } from "components/top-nav";
+import { ProductDetails } from "components/product/productDetails";
+import { Home } from "components/home";
+
+const StyledApp = styled.div`
+  height: calc(100vh - 180px);
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  padding: 90px 0;
+
+  @media (min-width: 550px) {
+    display: none;
+  }
+`;
 
 function App() {
+  const appRef = useRef(null);
+  const location = useLocation();
+  const isProductPage = location.pathname === "/product";
+  // { opacity: 0, transform: "translate3d(100vw, 0, 0)" }
+  const transitions = useTransition(location, {
+    from: { opacity: 1 },
+    enter: { opacity: 1, transform: "translate3d(0, 0, 0)" },
+    leave: { opacity: 0, transform: "translate3d(-20vw, 0, 0)" },
+    config: { duration: 5000 },
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyledApp ref={appRef}>
+      <TopNav isProductPage={isProductPage} />
+      <div className="container">
+        {transitions((props, item) => (
+          <animated.div style={props}>
+            <Routes location={item}>
+              <Route path="/" element={<Home />} />
+              <Route path="/product" element={<ProductDetails />} />
+            </Routes>
+          </animated.div>
+        ))}
+      </div>
+      <BottomNav isProductPage={isProductPage} />
+    </StyledApp>
   );
 }
 
