@@ -9,15 +9,18 @@ export const StyledBottomNav = styled.div`
   z-index: 5;
   background: #fff;
   padding: 15px 0;
+  visibility: hidden;
 
   @keyframes poof {
     from {
       opacity: 0;
       transform: translate3d(0, 95px, 0);
+      visibility: hidden;
     }
     to {
       opacity: 1;
       transform: translate3d(0, 0, 0);
+      visibility: visible;
     }
   }
 
@@ -26,7 +29,12 @@ export const StyledBottomNav = styled.div`
     animation-duration: 2s;
     animation-timing-function: ease-in;
     animation-delay: 1s;
+    visibility: visible !important;
   }
+
+  /* &.bottom {
+    visibility: visible !important;
+  } */
 
   .bottom {
     &__wrapper {
