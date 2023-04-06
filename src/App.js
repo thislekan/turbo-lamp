@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { animated, useTransition } from "react-spring";
 import styled from "styled-components";
 import { BottomNav } from "components/bottom-nav";
