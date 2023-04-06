@@ -10,6 +10,24 @@ export const StyledBottomNav = styled.div`
   background: #fff;
   padding: 15px 0;
 
+  @keyframes poof {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 95px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &.animate {
+    animation-name: poof;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-delay: 1s;
+  }
+
   .bottom {
     &__wrapper {
       &__content {
@@ -121,41 +139,6 @@ export const StyledBottomNav = styled.div`
                   border-left: none;
                   border-radius: 0 6px 6px 0;
                 }
-                /* button {
-                  display: flex;
-                  align-items: center;
-                  width: 135px;
-                  height: 50px;
-                  padding: unset;
-                  outline: none;
-                  color: white;
-                  border: 1px solid #2b2d40;
-
-                  div {
-                    background-color: #4bb198;
-                    border: 1px solid #4bb198;
-                    height: 100%;
-                    width: 50px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    img {
-                      height: 25px;
-                      width: 25px;
-                    }
-                  }
-
-                  .buy {
-                    height: 100%;
-                    background-color: #2b2d40;
-                    width: calc(100% - 50px);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border: 1px solid #2b2d40;
-                  }
-                } */
               }
             }
           }

@@ -7,7 +7,7 @@ import WhiteBag from "media/svg/whiteBag.svg";
 
 export const BottomNav = ({ isProductPage }) => {
   return (
-    <StyledBottomNav className="bottom">
+    <StyledBottomNav className={`bottom ${isProductPage ? "animate" : ""}`}>
       <div className="bottom__wrapper">
         <div className="bottom__wrapper__content">
           <div className={`home ${isProductPage ? "home--page2" : ""}`}>
