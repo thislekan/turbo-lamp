@@ -34,14 +34,18 @@ function App() {
     <StyledApp ref={appRef}>
       <TopNav isProductPage={isProductPage} />
       <div className="container">
-        {transitions((props, item) => (
+        {/* {transitions((props, item) => (
           <animated.div style={props}>
             <Routes location={item}>
               <Route path="/" element={<Home />} />
               <Route path="/product" element={<ProductDetails />} />
             </Routes>
           </animated.div>
-        ))}
+        ))} */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product" element={<ProductDetails />} />
+        </Routes>
       </div>
       <BottomNav isProductPage={isProductPage} />
     </StyledApp>

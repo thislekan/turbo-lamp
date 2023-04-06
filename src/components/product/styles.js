@@ -168,6 +168,22 @@ export const StyledCard = styled.div`
 export const StyledProductDetails = styled.div`
   padding: 90px 0;
   margin-top: -90px;
+  animation-name: poof;
+  animation-duration: 3.5s;
+  animation-timing-function: ease-in;
+
+  @keyframes poof {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 100vh, 0);
+      visibility: hidden;
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      visibility: visible !important;
+    }
+  }
 
   .wrapper {
     padding: 0 10px;
@@ -295,6 +311,10 @@ export const StyledProductDetails = styled.div`
 
     .details {
       .info {
+        animation-name: poof;
+        animation-duration: 4s;
+        animation-timing-function: ease-in;
+
         &__nav {
           display: flex;
           align-items: center;
@@ -351,6 +371,9 @@ export const StyledProductDetails = styled.div`
       }
 
       .description {
+        animation-name: poof;
+        animation-duration: 4.5s;
+        animation-timing-function: ease-in;
         border-bottom: 1px solid rgb(236, 237, 238);
         padding-bottom: 25px;
 
