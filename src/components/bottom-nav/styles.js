@@ -26,7 +26,7 @@ export const StyledBottomNav = styled.div`
 
   &.animate {
     animation-name: poof;
-    animation-duration: 2s;
+    animation-duration: 5.5s;
     animation-timing-function: ease-in;
     animation-delay: 1s;
     visibility: visible !important;
