@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { StyledTopNav } from "components/top-nav/styles";
 import Bag from "media/svg/shopping-bag.svg";
 import Comments from "media/svg/comment-alt.svg";
@@ -7,6 +8,8 @@ import Like from "media/svg/heart.svg";
 import Share from "media/svg/share.svg";
 
 export const TopNav = ({ isProductPage }) => {
+  const goto = useNavigate();
+  const navFunc = () => goto("/");
   return (
     <StyledTopNav className="top">
       <div className="top__wrapper">
@@ -19,7 +22,7 @@ export const TopNav = ({ isProductPage }) => {
           )}
           <div className={`icons ${isProductPage ? "icons--page2" : ""}`}>
             {isProductPage && (
-              <div className="back">
+              <div className="back" onClick={navFunc}>
                 <img src={ChevronLeft} alt="Left Arrow Icon" />
               </div>
             )}

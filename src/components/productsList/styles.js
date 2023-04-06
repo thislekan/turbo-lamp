@@ -38,13 +38,17 @@ export const StyledProductsList = styled.section`
     }
   }
 
-  /* @media (min-width: 350px) {
+  @media (min-width: 300px) {
     .wrapper {
       &__content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 15px;
+        .best-sales {
+          .card-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+          }
+        }
       }
     }
-  } */
+  }
 `;

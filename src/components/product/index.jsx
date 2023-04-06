@@ -1,10 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import LikeImage from "media/svg/heart.svg";
 import Star from "media/svg/star.svg";
 import { StyledCard } from "components/product/styles";
 
 export const Card = ({ rating, price, name, tags, ratingsCount, image }) => {
+  const goto = useNavigate();
+  const navFunc = () => goto("/product");
+
   return (
-    <StyledCard className="card">
+    <StyledCard className="card" onClick={navFunc}>
       <div className="card__content">
         <img src={LikeImage} alt="heart icon" className="icon" />
         <div className="image-div">

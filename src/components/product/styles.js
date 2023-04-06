@@ -79,10 +79,47 @@ export const StyledCard = styled.div`
   :hover {
     box-shadow: 13px 5px 10px 16px rgba(0, 0, 0, 0.1);
   }
+
+  @media (min-width: 300px) {
+    .card {
+      &__content {
+        .icon {
+          top: 5px;
+          right: 5px;
+          height: 15px;
+          width: 15px;
+        }
+        .image-div {
+          height: 95px;
+        }
+        .description {
+          .tags,
+          .title {
+            font-size: 10px;
+          }
+          .title {
+            margin: 5px 0px;
+          }
+          .number {
+            &__grouped {
+              .ratings {
+                font-size: 8px;
+              }
+            }
+            .price {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
 `;
 
 export const StyledProductDetails = styled.div`
-  padding-bottom: 90px;
+  padding: 90px 0;
+  margin-top: -90px;
+
   .wrapper {
     padding: 0 10px;
 

@@ -21,9 +21,12 @@ const StyledDots = styled.div`
     }
   }
 `;
-export const Dots = ({ isAbsolute }) => {
+export const Dots = ({ isAbsolute, slideFunc }) => {
   return (
-    <StyledDots className={`dots ${!isAbsolute ? "" : "dots--absolute"}`}>
+    <StyledDots
+      className={`dots ${!isAbsolute ? "" : "dots--absolute"}`}
+      onClick={slideFunc}
+    >
       <div className="dot dot--active"></div>
       <div className="dot"></div>
       <div className="dot"></div>

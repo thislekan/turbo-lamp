@@ -66,12 +66,16 @@ export const LandingPage = () => {
     index === 0 ? "rgb(232 235 234 / 80%)" : "rgb(178 153 156 / 35%)";
 
   useEffect(() => {
+    setTimeout(() => set(1), 2000);
+  }, []);
+
+  useEffect(() => {
     transRef.start();
   }, [index, transRef]);
 
   return (
     <StyledLandingPage>
-      <Dots isAbsolute />
+      <Dots slideFunc={onClick} isAbsolute />
       <div
         className="carousel"
         style={{
@@ -80,7 +84,6 @@ export const LandingPage = () => {
           marginTop: "-90px",
           position: "relative",
         }}
-        onClick={onClick}
       >
         {transitions((style, i) => {
           const Page = pages[i];

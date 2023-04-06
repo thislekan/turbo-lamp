@@ -28,7 +28,7 @@ function App() {
     from: { opacity: 1 },
     enter: { opacity: 1, transform: "translate3d(0, 0, 0)" },
     leave: { opacity: 0, transform: "translate3d(-20vw, 0, 0)" },
-    config: { duration: 5000 },
+    config: { duration: 500 },
   });
 
   return (

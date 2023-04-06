@@ -6,7 +6,7 @@ export const StyledLandingPage = styled.section`
   .dots {
     &--absolute {
       position: absolute;
-      top: calc(10% - 2px);
+      top: 110px;
       right: 10px;
       z-index: 5;
     }
@@ -16,5 +16,11 @@ export const StyledLandingPage = styled.section`
     height: 30vh;
     position: relative;
     overflow: hidden;
+  }
+
+  @media (max-height: 550px) {
+    .carousel {
+      height: 40vh;
+    }
   }
 `;
